@@ -1,0 +1,26 @@
+name: Validate Base Bridge Address
+on:
+  pull_request:
+    paths:
+      - "apps/bridge/assets.ts"
+
+jobs:
+  validate-baseBridgeAddress:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Install dependencies
+        run: |
+          npm install axios
+
+      - name: Run validation script
+        run: node validateBaseBridgeAddress.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
