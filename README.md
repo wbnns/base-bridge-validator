@@ -27,19 +27,19 @@ If these conditions are met, the GitHub Action passes, indicating the PR is comp
 
 ## Implementation Details
 
-- **Node.js Script:** The core logic is implemented in a Node.js script (`validateBaseBridgeAddress.js`). This script performs the extraction and validation of `L2symbol` entries.
+- **Node.js Script:** The core logic is implemented in a Typescript (`validateBaseBridgeAddress.ts`). This script performs the extraction and validation of `L2symbol` entries.
 - **GitHub Action Workflow:** Defined in `.github/workflows/validateBaseBridgeAddress.yml`, this workflow sets up the environment, runs the validation script, and determines the PR's pass/fail status based on the script's outcome.
 
 ## Requirements
 
-- Node.js environment with Axios installed for HTTP requests (handled within the GitHub Action workflow).
+- Typescript environment with Axios installed for HTTP requests (handled within the GitHub Action workflow).
 - Access to the GitHub API for fetching file contents when necessary.
 
 ## Adding to Your Repository
 
 To use this GitHub Action in your repository, follow these steps:
 
-1. Place the `validateBaseBridgeAddress.js` script in your repository.
+1. Place the `validateBaseBridgeAddress.ts` script in your repository.
 2. Create the GitHub Action workflow file at `.github/workflows/validateBaseBridgeAddress.yml` with the provided configuration.
 3. Adjust the workflow and script as necessary to fit your repository structure and validation rules.
 

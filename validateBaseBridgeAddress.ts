@@ -4,6 +4,12 @@ import { exec } from "child_process";
 import util from "util";
 const execAsync = util.promisify(exec);
 
+interface Token {
+  symbol: string;
+  chainId: number;
+  baseBridgeAddress: string;
+}
+
 async function getModifiedSymbols(): Promise<string[]> {
   try {
     const { stdout } = await execAsync(
@@ -42,7 +48,7 @@ async function validateL2symbol(): Promise<void> {
   let allSymbolsValid = true;
   for (const symbol of symbols) {
     const token = tokenList.tokens.find(
-      (token) =>
+      (token: Token) =>
         token.symbol === symbol &&
         token.chainId === 8453 &&
         token.baseBridgeAddress === "0x4200000000000000000000000000000000000010"
