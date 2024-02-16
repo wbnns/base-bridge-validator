@@ -1,7 +1,7 @@
 {
-  "name": "base-bridge-address-validator",
+  "name": "base-bridge-validator",
   "version": "0.1.0",
-  "description": "A GitHub Action workflow to validate L2symbol updates.",
+  "description": "Validate the Base Bridge Address on the Superchain Token List for new token additions on bridge.base.org.",
   "scripts": {
     "build": "tsc",
     "validate": "node dist/validateBaseBridgeAddress.js"
