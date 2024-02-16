@@ -1,7 +1,8 @@
 # base-bridge-validator
 
-## Overview
 ![Alt](https://repobeats.axiom.co/api/embed/45100930be03bcb501e479efbebbe13aff805c55.svg "Repobeats analytics image")
+
+## Overview
 
 This repo is for a GitHub Action that is designed to automate the validation process for pull requests (PRs) that modify the `apps/bridge/assets.ts` file in the `base-org/web` repository. Specifically, it checks for additions of `L2symbol` entries within pull requests. If a new `L2symbol` is added, the action validates it against a predefined token list in the `ethereum-optimism/ethereum-optimism.github.io` repository's `optimism.tokenlist.json` file.
 
